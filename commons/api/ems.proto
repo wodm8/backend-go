@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option go_package = "github.com/wodm8/backend-go/commons/api";
+
+package api;
+
+message Excercise {
+    string ID = 1;
+    string name = 2;
+    string category = 3;
+    string is_active = 4;
+}
+
+service ExerciseService {
+    rpc CreateExercise(CreateExcerciseRequest) returns (Excercise);
+}
+
+message CreateExcerciseRequest {
+    string name = 1;
+    string category = 2;
+}
